@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Seance\" />
+    <Folder Include="Tickets\BuyTicket\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SzkolenieTechniczne.Cinema.Storage\SzkolenieTechniczne.Cinema.Storage.csproj" />
+  </ItemGroup>
+
+</Project>
