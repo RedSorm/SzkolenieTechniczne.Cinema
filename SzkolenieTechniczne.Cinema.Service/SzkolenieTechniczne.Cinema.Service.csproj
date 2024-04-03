@@ -9,11 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Seance\" />
-    <Folder Include="Tickets\BuyTicket\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SzkolenieTechniczne.Cinema.Storage\SzkolenieTechniczne.Cinema.Storage.csproj" />
   </ItemGroup>
 
