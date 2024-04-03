@@ -45,11 +45,6 @@ namespace SzkolenieTechniczne.Cinema.Service.Tickets.BuyTicket
 
             return Result.Ok();
 
-           
-
-           
-
-           
         }
 
     }
