@@ -15,8 +15,7 @@ namespace SzkolenieTechniczne.Cinema.Service.Tickets.BuyTicket
             RuleFor(x => x.MovieID).NotEmpty();
             RuleFor(x => x.Email).NotEmpty();
             RuleFor(x => x.NumberOfTickets).GreaterThan(0); 
-            RuleFor(x => x.Ticket).NotEmpty();
-            RuleFor(x => x.Date).GreaterThan(DateTime.UtcNow);
+            RuleFor(x => x.SeanceData).GreaterThan(DateTime.UtcNow);
         }
     }
 }

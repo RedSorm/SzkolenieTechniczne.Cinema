@@ -16,10 +16,9 @@ namespace SzkolenieTechniczne.Cinema.Storage.Entities
         {
         }
 
-        public Ticket(string email, string phone, int numberOfTickets)
+        public Ticket(string email, int numberOfTickets)
         {
             Email = email;
-            Phone = phone;
             NumberOfTickets = numberOfTickets;
         }
 

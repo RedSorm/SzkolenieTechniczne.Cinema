@@ -6,7 +6,7 @@ using FluentValidation;
 using System.Threading.Tasks;
 using SzkolenieTechniczne.Cinema.Service.Command;
 using SzkolenieTechniczne.Cinema.Storage.Repository;
-using SzkolenieTechniczne.Cinema.Service.Movie.Edit;
+using SzkolenieTechniczne.Cinema.Storage.Entities;
 
 namespace SzkolenieTechniczne.Cinema.Service.Tickets.BuyTicket
 {
@@ -33,30 +33,23 @@ namespace SzkolenieTechniczne.Cinema.Service.Tickets.BuyTicket
                 return Result.Fail("Movie does not exist");
             }
 
-            var isSeanceExist = _repository.IsSeanceExist(command.Date);
-            if (isSeanceExist == false)
+            var seance = movie.GetSeanceByDateAndRoomId(command.SeanceData);
+            if (seance == null)
             {
-                return Result.Fail("This seance does not  exsit. ");
+                return Result.Fail("Seance does not exist. ");
             }
 
-            var isEmailExsit = _repository.IsMovieExist(command.Email);
-            if (isEmailExsit == false)
-            {
-                return Result.Fail("Email does not exsit. ");
-            }
-           
-            
+            var ticket = new Ticket(command.Email, command.NumberOfTickets);
 
-
-
-
-
-
-
-
-
+            ticket.SeanceId = seance.Id;
 
             return Result.Ok();
+
+           
+
+           
+
+           
         }
 
     }
